@@ -1,0 +1,25 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    place-items:center;
+    font-family:Arial, Helvetica, sans-serif;
+    /* display:grid; */
+}
+
+
+.pipe{
+    position:absolute;
+    top:50px;
+    left:50%;
+    height:480px;
+    width:120px;
+    transform:translateX(-50%);
+    background: #cfd8dc;
+    border-left: 10px solid #546e7a;
+    border-right: 10px solid #546e7a;
+}
