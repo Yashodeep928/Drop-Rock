@@ -1,25 +1,105 @@
-*{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    min-height:100vh;
-    place-items:center;
-    font-family:Arial, Helvetica, sans-serif;
-    /* display:grid; */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #eef2f7;
+  font-family: Arial, sans-serif;
+}
+
+
+.app{
+    width: min(900px,95%);
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-start;
+    padding:30px;
+    background:white;
+    border-radius:16px;
+}
+
+.rock-panel {
+  width: 250px;
+}
+
+.rock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 12px 20px;
+  background: #f3e5d8;
+  border: 2px solid #8d6e63;
+  border-radius: 12px;
+  cursor: grab;
+  user-select: none;
+}
+
+.rock span{
+    display:block;
+}
+
+.rock-small span{
+    font-size:30px;
+}
+.rock-medium span {
+  font-size: 45px;
+}
+
+.rock-large span {
+  font-size: 60px;
+}
+.experiment{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 
 .pipe{
+    position:relative;
+    width:160px;
+    height:500px;
+    background: linear-gradient(to right,  #78909c,
+    #eceff1 20%,
+    #cfd8dc 50%,
+    #eceff1 80%,
+    #78909c);
+    border-left: 12px solid #455a64;
+    border-right: 12px solid #455a64;
+}
+
+.speed-display{
     position:absolute;
-    top:50px;
     left:50%;
-    height:480px;
-    width:120px;
-    transform:translateX(-50%);
-    background: #cfd8dc;
-    border-left: 10px solid #546e7a;
-    border-right: 10px solid #546e7a;
+    bottom:20px;
+    width:125px;
+    padding:10px;
+    background: rgb(255 255 255 / 85%);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transform: translateX(-50%);
+}
+
+.falling-rock{
+    position: absolute;
+    display:none;
+}
+
+.pipe-entry{
+    width:160px;
+    padding:16px;
+    background:#e3f2fd;
+    border:3px dashed #1976d2;
+    text-align:center;
+    border-radius: 12px 12px 0 0;
+}
+.pipe-entry.drag-over {
+  background: #bbdefb;
+  border-style: solid;
 }

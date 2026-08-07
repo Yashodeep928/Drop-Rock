@@ -9,25 +9,40 @@
 </head>
 <body>
      
-    <header class="header">
-        <h3>Pick your item</h3>
+    <div class="app">
+  <section class="rock-panel">
+    <h2>Select a rock</h2>
 
-        <div class="item-container">
-            <span></span>
-        </div>
-    </header>
-    
+    <div class="rock rock-small" draggable="true" data-weight="1">
+      <span>🪨</span>
+      <p>1 kg</p>
+    </div>
 
-    <main class="main">
-        <div class="pipe">
+    <div class="rock rock-medium" draggable="true" data-weight="3">
+      <span>🪨</span>
+      <p>3 kg</p>
+    </div>
 
-        </div>
-    </main>
+    <div class="rock rock-large" draggable="true" data-weight="6">
+      <span>🪨</span>
+      <p>6 kg</p>
+    </div>
+  </section>
+
+  <section class="experiment">
+    <div class="pipe-entry">Drop rock here</div>
+
+    <div class="pipe" id="pipe">
+      <div class="falling-rock" id="fallingRock"></div>
+
+      <div class="speed-display">
+        Speed: <span id="speed">0.00</span> m/s
+      </div>
+    </div>
+  </section>
+</div>
 
 
-
-
-
-    <script src="index.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
