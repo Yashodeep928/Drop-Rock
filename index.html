@@ -1,48 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drop </title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1118">
+  <title>Drop Lab — Free-Fall Simulator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     
-    <div class="app">
-  <section class="rock-panel">
-    <h2>Select a rock</h2>
-
-    <div class="rock rock-small" draggable="true" data-weight="1">
-      <span>🪨</span>
-      <p>1 kg</p>
-    </div>
-
-    <div class="rock rock-medium" draggable="true" data-weight="3">
-      <span>🪨</span>
-      <p>3 kg</p>
-    </div>
-
-    <div class="rock rock-large" draggable="true" data-weight="6">
-      <span>🪨</span>
-      <p>6 kg</p>
-    </div>
-  </section>
-
-  <section class="experiment">
-    <div class="pipe-entry">Drop rock here</div>
-
-    <div class="pipe" id="pipe">
-      <div class="falling-rock" id="fallingRock"></div>
-
-      <div class="speed-display">
-        Speed: <span id="speed">0.00</span> m/s
+  <main class="lab-shell">
+    <header class="lab-header">
+      <div class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span>
       </div>
+      <div class="brand-copy">
+        <p class="eyebrow">Dynamics laboratory / Station 04</p>
+        <h1>Free-fall test chamber</h1>
+      </div>
+      <div class="system-status"><span class="status-light"></span>System ready</div>
+    </header>
+
+    <div class="app">
+      <section class="rock-panel" aria-labelledby="samples-title">
+        <div class="section-heading">
+          <p class="step-label">01 / Select sample</p>
+          <h2 id="samples-title">Rock specimens</h2>
+          <p>Drag a specimen into the chamber inlet to begin the test.</p>
+        </div>
+
+        <div class="specimen-list">
+          <div class="rock rock-small" draggable="true" data-weight="1" tabindex="0">
+            <span class="rock-shape" aria-hidden="true"></span>
+            <div class="rock-details"><strong>Basalt chip</strong><small>Fine grain</small></div>
+            <p>1 <span>kg</span></p>
+          </div>
+
+          <div class="rock rock-medium" draggable="true" data-weight="3" tabindex="0">
+            <span class="rock-shape" aria-hidden="true"></span>
+            <div class="rock-details"><strong>Granite core</strong><small>Medium grain</small></div>
+            <p>3 <span>kg</span></p>
+          </div>
+
+          <div class="rock rock-large" draggable="true" data-weight="6" tabindex="0">
+            <span class="rock-shape" aria-hidden="true"></span>
+            <div class="rock-details"><strong>Ironstone</strong><small>Dense aggregate</small></div>
+            <p>6 <span>kg</span></p>
+          </div>
+
+          <div class="rock rock-xlarge" draggable="true" data-weight="60" tabindex="0">
+            <span class="rock-shape" aria-hidden="true"></span>
+            <div class="rock-details"><strong>Field boulder</strong><small>Coarse grain</small></div>
+            <p>60 <span>kg</span></p>
+          </div>
+        </div>
+
+        <div class="lab-note">
+          <span aria-hidden="true">i</span>
+          <p><strong>Observation</strong>Compare terminal readings across specimen masses.</p>
+        </div>
+      </section>
+
+      <section class="experiment" aria-labelledby="chamber-title">
+        <div class="experiment-heading">
+          <div>
+            <p class="step-label">02 / Run experiment</p>
+            <h2 id="chamber-title">Vertical test chamber</h2>
+          </div>
+          <span class="chamber-id">VC–500</span>
+        </div>
+
+        <div class="chamber-wrap">
+          <div class="pipe-entry">
+            <span class="drop-icon" aria-hidden="true">↓</span>
+            <span>Drop specimen here</span>
+          </div>
+
+          <div class="measurement-ruler" aria-hidden="true">
+            <span style="--i: 0">0 m</span>
+            <span style="--i: 1">1 m</span>
+            <span style="--i: 2">2 m</span>
+            <span style="--i: 3">3 m</span>
+            <span style="--i: 4">4 m</span>
+          </div>
+
+          <div class="pipe" id="pipe">
+            <div class="chamber-glare" aria-hidden="true"></div>
+            <div class="falling-rock" id="fallingRock"></div>
+            <div class="speed-display">
+              <span>Instant velocity</span>
+              <strong><span id="speed">0.00</span> <small>m/s</small></strong>
+            </div>
+          </div>
+
+          <div class="chamber-base" aria-hidden="true"><span></span></div>
+        </div>
+      </section>
     </div>
-  </section>
-</div>
 
+    <footer class="lab-footer">
+      <span>Gravity model: mass-variable simulation</span>
+      <span>Chamber depth: 5.0 m</span>
+      <span>Sensor refresh: live</span>
+    </footer>
+  </main>
 
-<script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
